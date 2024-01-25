@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression test cases" >
+    <test verbose="2" preserve-order="true" name="Credit Card">
+        <groups>
+            <run>
+                <include name="Smoke"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="lesson17.AnnotationsTestng"/>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true" name="Debit Card" parallel="methods" thread-count="3">
+        <classes>
+            <class name="lesson17.AnnotationsTestng2"/>
+        </classes>
+    </test>
+</suite>

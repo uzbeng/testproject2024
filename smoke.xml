@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Smoke test cases">
+    <test verbose="2" preserve-order="true" name="Investment">
+        <groups>
+            <run>
+<!--                <exclude name="brokenTests"  />-->
+                <include name="smoke"  />
+            </run>
+        </groups>
+
+        <classes>
+            <class name="functional_programming.DemoTestng">
+
+            </class>
+            <class name="lesson16.TestClassB">
+                <methods>
+                    <include name="testB1"/>
+                    <include name="testB2"/>
+                    <include name="testB3"/>
+                </methods>
+            </class>
+            <class name="lesson16.TestClassC">
+                <methods>
+                    <include name="testC1"/>
+                    <include name="testC2"/>
+                    <include name="testC3"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

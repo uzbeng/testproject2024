@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression test cases">
+    <test verbose="2" preserve-order="true" name="Credit Card">
+        <classes>
+            <class name="lesson15.ChromeRunnerJunit">
+                <methods>
+                    <exclude name="test1"/>
+                </methods>
+            </class>
+            <class name="lesson16.TestClassA"/>
+            <class name="lesson16.TestClassB">
+                <methods>
+                    <include name="testB1"/>
+                    <include name="testB2"/>
+                    <include name="testB3"/>
+                </methods>
+            </class>
+            <class name="lesson16.TestClassC">
+                <methods>
+                    <include name="testC1"/>
+                    <include name="testC2"/>
+                    <include name="testC3"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true" name="Investment">
+        <classes>
+            <class name="lesson16.TestClassA">
+                <methods>
+                    <include name="testA1"/>
+                    <include name="testA2"/>
+                    <include name="testA3"/>
+                </methods>
+            </class>
+            <class name="lesson16.TestClassB">
+                <methods>
+                    <include name="testB1"/>
+                    <include name="testB2"/>
+                    <include name="testB3"/>
+                </methods>
+            </class>
+            <class name="lesson16.TestClassC">
+                <methods>
+                    <include name="testC1"/>
+                    <include name="testC2"/>
+                    <include name="testC3"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
