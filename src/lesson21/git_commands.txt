@@ -1,0 +1,19 @@
+git status
+git init
+git add filename
+git add .
+git commit -m "Your commit message"
+git log
+git log --oneline
+git shortlog
+
+git branch - view all the branches
+git branch <branchname>
+git switch <existing branch name> - new version
+git checkout <existing branch name>
+
+git merge <branch being merged> - you first have to switch to destination branch
+
+
+
+

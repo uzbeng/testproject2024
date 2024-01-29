@@ -3,6 +3,8 @@ package lesson20;
 import base.Base;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Set;
@@ -18,10 +20,15 @@ public class HandleAlertPopUps extends Base {
         Alert alertPopup = driver.switchTo().alert();
         String test = alertPopup.getText();
         System.out.println(test);
+        Assert.assertEquals(test, "Some expected text message");
         alertPopup.accept();
 
         // Click on checkbox
-        driver.findElement(By.id("bmwcheck")).click();
+        WebElement checkboxBmw = driver.findElement(By.id("bmwcheck"));
+        checkboxBmw.click();
+
+        Assert.assertTrue(checkboxBmw.isSelected(), "Checkbox did not get checked");
+
 
     }
 
@@ -52,6 +59,8 @@ public class HandleAlertPopUps extends Base {
     public void handlingChildWindows() {
         driver.get("https://www.letskodeit.com/practice");
 
+        Assert.assertEquals(driver.getTitle(), "Practice Page");
+
         String parentWinId = driver.getWindowHandle();
         System.out.println("Parent Id:" + parentWinId);
 
@@ -66,6 +75,7 @@ public class HandleAlertPopUps extends Base {
         }
 
         driver.switchTo().window(childWinId);
+        Assert.assertEquals(driver.getTitle(), "Child window title");
         // Sign in inside child window
         driver.findElement(By.xpath("//a[text()='Sign In']")).click();
 //        driver.close();

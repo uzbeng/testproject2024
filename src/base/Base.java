@@ -3,6 +3,7 @@ package base;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -16,6 +17,7 @@ public class Base {
     // 2. TestNG - is used for testing by testers.
     //
     protected WebDriver driver = null; //Global variables get the null value by default
+    protected WebDriverWait wait = null;
 
     @BeforeMethod // It runs before each test method
     public void setup() {
@@ -36,6 +38,7 @@ public class Base {
         driver.manage().window().maximize();
         // This will wait for 10 seconds before throwing NoSuchElementException
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
         // Element Not Interactable - learn in syncronization topic
     }
@@ -46,7 +49,7 @@ public class Base {
         driver.quit();
     }
 
-    @Test
+//    @Test
     public void bookingFlights() throws InterruptedException {
         driver.get("https://www.cheapflights.com/");
         Thread.sleep(3000);
